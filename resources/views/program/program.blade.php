@@ -1,7 +1,7 @@
 @extends('master.layouts')
 
 @section('content')   
-<div class="row tm-row tm-mb-120">
+<div class="row tm-row">
     <div class="col-12">
         <h2 class="tm-color-primary tm-post-title tm-mb-60">Program</h2>
     </div>
