@@ -18,24 +18,15 @@ Route::get('/', function () {
     return view('master.layouts');
 });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(["prefix"=>"/category"], function(){
-    Route::get("/marbbel-edu-games", function(){
-        return view('product.edu-games');
-    });
-
-    Route::get("/marbbel-and-friends-kid-games", function(){
-        echo "Marbel kid games";
-    });
-    Route::get("/riri-story-books", function(){
-        echo "Riri story books";
-    });
-    Route::get("/kolak-kids-songs", function(){
-        echo "Kolak story";
-    });
+    Route::get("/marbbel-edu-games", [App\Http\Controllers\ProdukController::class, 'edu_games']);
+    Route::get("/marbbel-and-friends-kid-games", [App\Http\Controllers\ProdukController::class, 'kids_games']);
+    Route::get("/riri-story-books", [App\Http\Controllers\ProdukController::class, 'story_books']);
+    Route::get("/kolak-kids-songs", [App\Http\Controllers\ProdukController::class, 'kids_songs']);
 });
 
 Route::get("/news", function(){
@@ -43,15 +34,9 @@ Route::get("/news", function(){
 });
 
 Route::group(["prefix"=>"/program"], function(){
-    Route::get("/karir", function(){
-        return view("program.program");
-    });
-    Route::get("/magang", function(){
-        echo "Magang";
-    });
-    Route::get("/kunjungan-industri", function(){
-        echo "Kunjungan industri";
-    });
+    Route::get("/karir", [App\Http\Controllers\ProgramController::class, 'karir']);
+    Route::get("/magang",  [App\Http\Controllers\ProgramController::class, 'magang']);
+    Route::get("/kunjungan-industri",  [App\Http\Controllers\ProgramController::class, 'kunjungan_industri']);
 });
 
 Route::Get('/about-us', [App\Http\Controllers\AboutController::class, 'about']);

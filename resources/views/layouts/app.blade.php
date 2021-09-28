@@ -38,7 +38,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        @yield('right-side-of-navbar')
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

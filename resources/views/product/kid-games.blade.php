@@ -2,7 +2,7 @@
 @section('content')
 <div class="row tm-row tm-mb-120">
     <div class="col-12">
-        <h2 class="tm-color-primary tm-post-title tm-mb-60">Product</h2>
+        <h2 class="tm-color-primary tm-post-title tm-mb-60">Kids</h2>
     </div>
     @foreach($data_produk as $produk)
     <article class="col-12 col-md-6 tm-post">
